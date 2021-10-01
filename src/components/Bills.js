@@ -75,9 +75,11 @@ const Bills = (props) => {
       <table className="table table-center text-center">
         <thead>
           <tr>
-            {Object.keys(props.billsList[0]).map((key, i) => (
-              <th key={i}>{key.toUpperCase()}</th>
-            ))}
+          {props?.billsList?.length
+              ? Object.keys(props?.billsList[0])?.map((key, i) => (
+                  <th key={i}>{key}</th>
+                ))
+              : null}
             <th>ACTIONS</th>
           </tr>
         </thead>

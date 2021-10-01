@@ -4,11 +4,11 @@ import AC from "../redux/ActionCreators";
 
 const AddBillForm = (props) => {
   const [state, setState] = useState({
+    id: props?.billsList?.length + 1,
     description: "",
     category: "",
     amount: "",
     date: "",
-    id: props?.billsList?.length + 1,
   });
   const handleOnChange = (e) => {
     let temp = { ...state };
