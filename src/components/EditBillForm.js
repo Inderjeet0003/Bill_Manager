@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import AC from "../redux/ActionCreators";
 
 const EditBillForm = (props) => {
+  console.log(props)
   const id = props?.match.params?.id;
   const bill = props.billsList.filter((b) => {
     console.log("b: ", b);

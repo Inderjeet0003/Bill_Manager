@@ -39,6 +39,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteBill: (id) => dispatch(AC.deleteBill(id)),
+  
   };
 };
 

@@ -30,7 +30,7 @@ const Bills = (props) => {
     setBills([...sorted]);
     console.table(sorted);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [budget]);
+  }, [budget,props.billsList]);
 
   return (
     <div>
@@ -47,11 +47,26 @@ const Bills = (props) => {
       <div className="m-4">
         <div><h3>Filter By :</h3> </div>
         <div>
-          <input
+          {/* <input
             value={category}
             onChange={(e) => setCat(e.target.value)}
             placeholder={"Category"}
-          ></input>
+            selectBoxOptions="Canada;Denmark;Finland;Germany;Mexico"
+          >
+            
+          </input> */}
+          <label>
+        <input list="categories" name="category" value={category} placeholder="Category"  onChange={(e) => setCat(e.target.value)}/></label>
+        <datalist id="categories">
+          <option value="Personal Care"/>
+          <option value="FoodNDining"/>
+          <option value="utility"/>
+          <option value="shopping"/>
+          <option value="education"/>
+          <option value="Travel"/>
+          <option value="Food & Dining"/>
+        </datalist>
+
           <button className="btn btn-primary ml-4" onClick={filterBills}>
             Filter
           </button>
