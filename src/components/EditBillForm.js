@@ -27,8 +27,9 @@ const EditBillForm = (props) => {
     props.history.push("/");
   };
   return (
-    <div className="p-4 m-4">
-      <div className="name-item">
+    <div className="col-md-6 shadow mx-auto my-5">
+      <h1>Edit Bill</h1>
+      <div className="name-item mb-3">
         <p>Description</p>
         <input
           type="text"
@@ -38,7 +39,7 @@ const EditBillForm = (props) => {
           value={state.description}
         />
       </div>
-      <div className="item">
+      <div className="item mb-3">
         <p>Category</p>
         <input
           type="text"
@@ -47,7 +48,7 @@ const EditBillForm = (props) => {
           value={state.category}
         />
       </div>
-      <div className="item">
+      <div className="item mb-3">
         <p>Amount</p>
         <input
           type="text"
@@ -66,7 +67,7 @@ const EditBillForm = (props) => {
         />
       </div>
       <div className="m-4">
-        <button className="btn btn-primary" onClick={handleSubmit}>
+        <button className="btn btn-primary mb-4" onClick={handleSubmit}>
           Save Changes
         </button>
       </div>

@@ -5,7 +5,7 @@ import "./App.css";
 const store = ConfigureStore();
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{color:'green'}}>
       <Provider store={store}>
         <Routes></Routes>
       </Provider>

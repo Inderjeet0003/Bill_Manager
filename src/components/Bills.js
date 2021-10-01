@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Bill from "./Bill";
+
 const Bills = (props) => {
+  // console.log("bills list kya h",props.billsList)
   const [category, setCat] = useState("");
   const [budget, setBud] = useState(5000);
   const [billsList, setBills] = useState([...props.billsList]);
+
   const filterBills = () => {
     if (category) {
       let temp = props.billsList.filter((bill) => bill.category === category);
@@ -32,7 +35,7 @@ const Bills = (props) => {
   return (
     <div>
       <div className="m-4">
-        <div>Budget : </div>
+        <div><h2>Budget :</h2> </div>
         <div>
           <input
             value={budget}
@@ -42,14 +45,14 @@ const Bills = (props) => {
         </div>
       </div>
       <div className="m-4">
-        <div>Filter By : </div>
+        <div><h3>Filter By :</h3> </div>
         <div>
           <input
             value={category}
             onChange={(e) => setCat(e.target.value)}
             placeholder={"Category"}
           ></input>
-          <button className="btn btn-primary" onClick={filterBills}>
+          <button className="btn btn-primary ml-4" onClick={filterBills}>
             Filter
           </button>
         </div>
@@ -58,9 +61,9 @@ const Bills = (props) => {
         <thead>
           <tr>
             {Object.keys(props.billsList[0]).map((key, i) => (
-              <th key={i}>{key}</th>
+              <th key={i}>{key.toUpperCase()}</th>
             ))}
-            <th>Actions</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
